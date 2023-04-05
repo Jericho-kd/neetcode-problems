@@ -15,3 +15,19 @@ def test_two_sum():
 def test_is_anagram():
     assert ah_problems.is_anagram("anagram", "nagaram") == True
     assert ah_problems.is_anagram("cat", "rat") == False
+
+
+def test_group_anagrams():
+    #assert ah_problems.group_anagrams(["eat","tea","tan","ate","nat","bat"]) \
+        #== [["bat"],["nat","tan"],["ate","eat","tea"]]
+    assert  ah_problems.group_anagrams(["a"]) == [["a"]]
+
+
+def test_top_k_frequent():
+    assert ah_problems.top_k_frequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
+    assert ah_problems.top_k_frequent([1], 1) == [1]
+
+
+def test_top_k_frequent_counter():
+    assert ah_problems.top_k_frequent_counter([1, 1, 1, 2, 2, 3], 2) == [1, 2]
+    assert ah_problems.top_k_frequent_counter([1], 1) == [1]
