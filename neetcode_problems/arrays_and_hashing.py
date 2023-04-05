@@ -66,27 +66,40 @@ def top_k_frequent_counter(nums: list[int], k: int) -> list[int]:
     return [key for key, value in tmp.most_common(k)]
     
 
-def productExceptSelf(nums: list[int]) -> list[int]:
-        result: list[int] = []
-        for idx, el in enumerate(nums):
-            if idx == 0:
-                result.append(product([1], nums[idx+1:]))
-            elif idx == len(nums) - 1:
-                result.append(product(nums[0:idx], [1]))
-            else:
-                result.append(product(nums[0:idx], nums[idx+1:]))
+# 238. Product of Array Except Self (medium)
+def product_except_self(nums: list[int]) -> list[int]:
+    result: list[int] = [1] * len(nums)
+    prefix, postfix = 1, 1
 
-        return result
+    for i in range(len(nums)):
+        result[i] = prefix
+        prefix *= nums[i]
+
+    for i in range(len(nums)-1, -1, -1):
+        result[i] *= postfix
+        postfix *= nums[i]
+
+    return result
+
+# def productExceptSelf(nums: list[int]) -> list[int]:
+#         result: list[int] = []
+#         for idx, el in enumerate(nums):
+#             if idx == 0:
+#                 result.append(product([1], nums[idx+1:]))
+#             elif idx == len(nums) - 1:
+#                 result.append(product(nums[0:idx], [1]))
+#             else:
+#                 result.append(product(nums[0:idx], nums[idx+1:]))
+
+#         return result
                 
     
-def product(prefix: list[int], suffix: list[int]) -> int:
-    pref_res, suff_res = 1, 1
-    for el in prefix:
-        pref_res *= el
+# def product(prefix: list[int], suffix: list[int]) -> int:
+#     pref_res, suff_res = 1, 1
+#     for el in prefix:
+#         pref_res *= el
     
-    for el in suffix:
-        suff_res *= el
+#     for el in suffix:
+#         suff_res *= el
 
-    return pref_res * suff_res
-
-print(productExceptSelf([1,2,3,4]))
+#     return pref_res * suff_res
