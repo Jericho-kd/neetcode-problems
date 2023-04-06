@@ -81,25 +81,11 @@ def product_except_self(nums: list[int]) -> list[int]:
 
     return result
 
-# def productExceptSelf(nums: list[int]) -> list[int]:
-#         result: list[int] = []
-#         for idx, el in enumerate(nums):
-#             if idx == 0:
-#                 result.append(product([1], nums[idx+1:]))
-#             elif idx == len(nums) - 1:
-#                 result.append(product(nums[0:idx], [1]))
-#             else:
-#                 result.append(product(nums[0:idx], nums[idx+1:]))
 
-#         return result
-                
-    
-# def product(prefix: list[int], suffix: list[int]) -> int:
-#     pref_res, suff_res = 1, 1
-#     for el in prefix:
-#         pref_res *= el
-    
-#     for el in suffix:
-#         suff_res *= el
+def plusOne(digits: list[int]) -> list[int]:
+    tmp = ''.join(map(str, digits))
+    digits = list(map(int, str(int(tmp) + 1)))
 
-#     return pref_res * suff_res
+    return list(digits)
+
+print(plusOne([9, 9]))
