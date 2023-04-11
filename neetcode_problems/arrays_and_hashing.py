@@ -80,12 +80,3 @@ def product_except_self(nums: list[int]) -> list[int]:
         postfix *= nums[i]
 
     return result
-
-
-def plusOne(digits: list[int]) -> list[int]:
-    tmp = ''.join(map(str, digits))
-    digits = list(map(int, str(int(tmp) + 1)))
-
-    return list(digits)
-
-print(plusOne([9, 9]))
