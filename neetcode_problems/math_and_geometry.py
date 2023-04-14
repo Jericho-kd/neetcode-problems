@@ -5,6 +5,7 @@ def plus_one(digits: list[int]) -> list[int]:
 
     return digits
 
+
 # 202. Happy Number (easy)
 def is_happy(n: int) -> bool:
     s: set[int] = set()

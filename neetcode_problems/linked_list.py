@@ -33,6 +33,10 @@ c.next = d
 d.next = e
 print(reverse_list(a))
 
-# b.next = a
-# print(a.next, b.next)
-
+def test(arr: list[int]) -> bool:
+    if bool(arr):
+        return True
+    else:
+        return False
+    
+print(test([]))
