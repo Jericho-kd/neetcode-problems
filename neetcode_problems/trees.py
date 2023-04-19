@@ -11,6 +11,8 @@ class TreeNode:
 
 
 def from_list(elements: list[int]) -> TreeNode:
+    if not elements:
+        return []
     root_node = TreeNode(value=elements[0])
     nodes = [root_node]
 
@@ -28,7 +30,26 @@ def from_list(elements: list[int]) -> TreeNode:
 
     return root_node
 
-print(from_list([1,2,3,4,5,6,7]))
+#print(from_list([1, 3, 2, 7, 6, 5, 4]))
+
+
+def to_list(tree: TreeNode | None, result: list[int] = None) -> list[int]:
+    if result is None:
+        result = []
+    if not tree:
+        return result
+    
+    #result.append(tree.value)
+    if tree.left:
+        result.append(tree.left.value)
+    if tree.right:
+        result.append(tree.right.value)
+    to_list(tree.left, result)
+    to_list(tree.right, result)
+
+    return result
+
+#print(to_list(from_list([1, 3, 2, 7, 6, 5, 4])))
 
 
 # 100. Same Tree (easy)
@@ -40,4 +61,18 @@ def is_same_tree(p: TreeNode | None, q: TreeNode | None) -> bool:
     
     return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)
 
-print(is_same_tree(from_list([1,2,3]), from_list([1,2,3])))
+
+# 226. Invert Binary Tree (easy)
+def invert_tree(root: TreeNode | None) -> TreeNode | None:
+    if not root:
+        return root
+    invert_tree(root.left)
+    invert_tree(root.right)
+    root.left, root.right = root.right, root.left
+
+    return root
+
+#print(to_list(invert_tree(from_list([1, 2, 3, 4, 5, 6, 7]))))#
+# node = [4]
+# node.extend(to_list(invert_tree(from_list([4, 2, 7, 1, 3, 6, 9]))))
+# print(node)
