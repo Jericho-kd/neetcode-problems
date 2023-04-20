@@ -30,8 +30,6 @@ def from_list(elements: list[int]) -> TreeNode:
 
     return root_node
 
-#print(from_list([1, 3, 2, 7, 6, 5, 4]))
-
 
 def to_list(tree: TreeNode | None, result: list[int] = None) -> list[int]:
     if result is None:
@@ -48,8 +46,6 @@ def to_list(tree: TreeNode | None, result: list[int] = None) -> list[int]:
     to_list(tree.right, result)
 
     return result
-
-#print(to_list(from_list([1, 3, 2, 7, 6, 5, 4])))
 
 
 # 100. Same Tree (easy)
@@ -71,8 +67,3 @@ def invert_tree(root: TreeNode | None) -> TreeNode | None:
     root.left, root.right = root.right, root.left
 
     return root
-
-#print(to_list(invert_tree(from_list([1, 2, 3, 4, 5, 6, 7]))))#
-# node = [4]
-# node.extend(to_list(invert_tree(from_list([4, 2, 7, 1, 3, 6, 9]))))
-# print(node)
