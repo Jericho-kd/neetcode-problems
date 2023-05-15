@@ -80,3 +80,27 @@ def product_except_self(nums: list[int]) -> list[int]:
         postfix *= nums[i]
 
     return result
+
+# (easy)
+def array_of_squares(nums: list[int]) -> list[int]:
+    if not nums:
+        return []
+    left, right = 0, len(nums) - 1
+    result: list[int] = []
+
+    while left < right:
+        if abs(nums[left]) > abs(nums[right]):
+            result.append(abs(nums[left])**2)
+            left += 1
+        elif abs(nums[left]) < abs(nums[right]):
+            result.append(abs(nums[right])**2)
+            right -= 1
+        elif abs(nums[left]) == abs(nums[right]):
+            result.append(abs(nums[left])**2)
+            result.append(abs(nums[right])**2)
+            left += 1
+            right -= 1
+    result.append(abs(nums[left])**2)
+
+    return result[::-1]
+

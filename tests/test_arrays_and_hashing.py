@@ -36,3 +36,8 @@ def test_top_k_frequent_counter():
 def test_product_except_self():
     assert ah_problems.product_except_self([1, 2, 3, 4]) == [24, 12, 8, 6]
     assert ah_problems.product_except_self([-1,1,0,-3,3]) == [0,0,9,0,0]
+
+def test_array_of_squares():
+    assert ah_problems.array_of_squares([-6, -5, -4, -3, -2, 1, 2, 3, 4]) == [1, 4, 4, 9, 9, 16, 16, 25, 36]
+    assert ah_problems.array_of_squares([-5, -3, -1]) == [1, 9, 25]
+    assert ah_problems.array_of_squares([]) == []
