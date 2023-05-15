@@ -23,3 +23,13 @@ def max_profit_second(prices: list[int]) -> int:
         right += 1
 
     return max_profit
+
+
+# 239. Sliding Window Maximum (hard)
+def max_sliding_window(nums: list[int], k: int) -> list[int]:
+    result: list[int] = []
+    tmp: list[int] = []
+    f_max, s_max = 0, 0
+    left = 0
+    
+    return result

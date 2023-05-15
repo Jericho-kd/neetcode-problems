@@ -81,7 +81,7 @@ def product_except_self(nums: list[int]) -> list[int]:
 
     return result
 
-# (easy)
+# 977. Squares of a Sorted Array (easy)
 def array_of_squares(nums: list[int]) -> list[int]:
     if not nums:
         return []
@@ -100,7 +100,7 @@ def array_of_squares(nums: list[int]) -> list[int]:
             result.append(abs(nums[right])**2)
             left += 1
             right -= 1
-    result.append(abs(nums[left])**2)
+    if left == right:
+        result.append(abs(nums[left])**2)
 
     return result[::-1]
-

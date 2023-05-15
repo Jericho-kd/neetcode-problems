@@ -39,5 +39,5 @@ def test_product_except_self():
 
 def test_array_of_squares():
     assert ah_problems.array_of_squares([-6, -5, -4, -3, -2, 1, 2, 3, 4]) == [1, 4, 4, 9, 9, 16, 16, 25, 36]
-    assert ah_problems.array_of_squares([-5, -3, -1]) == [1, 9, 25]
+    assert ah_problems.array_of_squares([-10000, -9999, -7, -5, 0, 0, 10000]) == [0, 0, 25, 49, 99980001, 100000000, 100000000]
     assert ah_problems.array_of_squares([]) == []
