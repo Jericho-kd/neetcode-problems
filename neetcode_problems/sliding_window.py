@@ -32,4 +32,7 @@ def max_sliding_window(nums: list[int], k: int) -> list[int]:
     f_max, s_max = 0, 0
     left = 0
     
+    for idx, el in enumerate(nums):
+        pass
+
     return result
