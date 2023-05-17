@@ -26,13 +26,20 @@ def max_profit_second(prices: list[int]) -> int:
 
 
 # 239. Sliding Window Maximum (hard)
+from collections import deque
 def max_sliding_window(nums: list[int], k: int) -> list[int]:
-    result: list[int] = []
-    tmp: list[int] = []
-    f_max, s_max = 0, 0
-    left = 0
-    
+    window, result = deque(), []
+
     for idx, el in enumerate(nums):
-        pass
+        while window and window[0] <= idx - k:
+            window.popleft()
+
+        while window and nums[window[-1]] < nums[idx]:
+            window.pop()
+
+        window.append(idx)
+
+        if idx >= k - 1:
+            result.append(nums[window[0]])
 
     return result
