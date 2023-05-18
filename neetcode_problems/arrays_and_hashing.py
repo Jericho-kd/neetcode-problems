@@ -81,6 +81,7 @@ def product_except_self(nums: list[int]) -> list[int]:
 
     return result
 
+
 # 977. Squares of a Sorted Array (easy)
 def array_of_squares(nums: list[int]) -> list[int]:
     if not nums:
@@ -104,3 +105,18 @@ def array_of_squares(nums: list[int]) -> list[int]:
         result.append(abs(nums[left])**2)
 
     return result[::-1]
+
+
+# 240. Search a 2D Matrix II (medium)
+def search_matrix(matrix: list[list[int]], target: int) -> bool:
+    m, n = 0, len(matrix[0]) - 1
+
+    while m <= (len(matrix) - 1) and n >= 0:
+        if target == matrix[m][n]:
+            return True
+        elif target < matrix[m][n]:
+            n -= 1
+        elif target > matrix[m][n]:
+            m += 1
+
+    return False
