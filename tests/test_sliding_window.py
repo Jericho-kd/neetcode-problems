@@ -11,3 +11,9 @@ def test_max_profit():
 def test_max_slliding_window():
     assert sw_problems.max_sliding_window([1,3,-1,-3,5,3,6,7], 3) == [3,3,5,5,6,7]
     assert sw_problems.max_sliding_window([1, -1], 1) == [1, -1]
+
+
+def test_contains_nearby_duplicate():
+    assert sw_problems.contains_nearby_duplicate([1,2,3,1], 3) == True
+    assert sw_problems.contains_nearby_duplicate([1,0,1,1], 1) == True
+    assert sw_problems.contains_nearby_duplicate([1,2,3,1,2,3], 2) == False

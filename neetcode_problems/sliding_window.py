@@ -43,3 +43,15 @@ def max_sliding_window(nums: list[int], k: int) -> list[int]:
             result.append(nums[window[0]])
 
     return result
+
+
+# 219. Contains Duplicate II (easy)
+def contains_nearby_duplicate(nums: list[int], k: int) -> bool:
+        tmp: dict[int, int] = {}
+        
+        for i, j in enumerate(nums):
+            if j in tmp and abs(i - tmp[j]) <= k:
+                    return True
+            tmp[j] = i
+                    
+        return False
