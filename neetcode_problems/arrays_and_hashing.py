@@ -1,3 +1,6 @@
+from dataclasses import dataclass, field
+
+
 # 217. Contains Duplicate (easy)
 def contains_duplicate(nums: list[int]) -> bool:
     s: set[int] = set()
@@ -136,3 +139,43 @@ def max_area(height: list[int]) -> int:
             right -= 1
 
     return result
+
+
+# 1476. Subrectangle Queries (medium)
+@dataclass
+class SubrectangleQueries:
+    rectangle: list[list[int]] = field(repr=True)
+
+    def update_subrectangle(self, row1: int, col1: int, row2: int, 
+                            col2: int, new_value: int) -> None:
+        for r in range(row1, row2+1):
+            for c in range(col1, col2+1):
+                self.rectangle[r][c] = new_value
+
+    def get_value(self, row: int, col: int) -> int:
+        return self.rectangle[row][col]
+
+# s = SubrectangleQueries([[1,2,1],[4,3,4],[3,2,1],[1,1,1]])
+# s.get_value(0, 2)
+# s.update_subrectangle(0, 0, 3, 2, 5)
+# s.get_value(0, 2)
+# s.get_value(3, 1)
+# s.update_subrectangle(3, 0, 3, 2, 10)
+# s.get_value(3, 1)
+# s.get_value(0, 2)
+
+
+# 13. Roman to Integer (easy)
+def roman_to_int(s: str) -> int:
+    roman_nums = {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+    result = 0
+
+    s = s.replace('IV', 'IIII').replace('IX', 'VIIII')
+    s = s.replace('XL', 'XXXX').replace('XC', 'LXXXX')
+    s = s.replace('CD', 'CCCC').replace('CM', 'DCCCC')
+
+    for char in s:
+        result += roman_nums[char]
+
+    return result
+        
