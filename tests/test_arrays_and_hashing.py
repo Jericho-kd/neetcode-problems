@@ -52,3 +52,9 @@ def test_search_matrix():
 def test_max_area():
     assert ah_problems.max_area([1,8,6,2,5,4,8,3,7]) == 49
     assert ah_problems.max_area([1, 1]) == 1
+
+
+def test_roman_to_int():
+    assert ah_problems.roman_to_int("III") == 3
+    assert ah_problems.roman_to_int("LVIII") == 58
+    assert ah_problems.roman_to_int("MCMXCIV") == 1994
