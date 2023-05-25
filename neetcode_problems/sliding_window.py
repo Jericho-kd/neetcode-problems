@@ -55,3 +55,19 @@ def contains_nearby_duplicate(nums: list[int], k: int) -> bool:
             tmp[j] = i
                     
         return False
+
+
+# 643. Maximum Average Subarray I (easy)
+def find_max_average(nums: list[int], k: int) -> float:
+    window_sum, window_start = 0, 0
+    max_average = float('-inf')
+
+    for idx, el in enumerate(nums):
+        window_sum += el
+        if idx >= k - 1:
+            max_average = max(max_average, window_sum/k)
+            window_sum -= nums[window_start]
+            window_start += 1
+    
+    return max_average
+            

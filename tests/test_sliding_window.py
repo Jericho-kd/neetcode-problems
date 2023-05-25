@@ -17,3 +17,8 @@ def test_contains_nearby_duplicate():
     assert sw_problems.contains_nearby_duplicate([1,2,3,1], 3) == True
     assert sw_problems.contains_nearby_duplicate([1,0,1,1], 1) == True
     assert sw_problems.contains_nearby_duplicate([1,2,3,1,2,3], 2) == False
+
+
+def test_find_max_average():
+    assert sw_problems.find_max_average([1,12,-5,-6,50,3], 4) == 12.75
+    assert sw_problems.find_max_average([5], 1) == 5.0
