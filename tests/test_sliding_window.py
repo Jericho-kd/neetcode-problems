@@ -22,3 +22,9 @@ def test_contains_nearby_duplicate():
 def test_find_max_average():
     assert sw_problems.find_max_average([1,12,-5,-6,50,3], 4) == 12.75
     assert sw_problems.find_max_average([5], 1) == 5.0
+
+
+def test_min_subarray_len():
+    assert sw_problems.min_subarray_len(7, [2,3,1,2,4,3]) == 2
+    assert sw_problems.min_subarray_len(4, [1,4,4]) == 1
+    assert sw_problems.min_subarray_len(11, [1,1,1,1,1,1,1,1]) == 0

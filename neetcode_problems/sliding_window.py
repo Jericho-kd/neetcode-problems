@@ -70,4 +70,22 @@ def find_max_average(nums: list[int], k: int) -> float:
             window_start += 1
     
     return max_average
+
+
+# 209. Minimum Size Subarray Sum (medium)
+def min_subarray_len(target: int, nums: list[int]) -> int:
+    left, right = 0, 0
+    min_len = len(nums) + 1
+    result = 0
+
+    while right < len(nums):
+        result += nums[right]
+        right += 1
+
+        while result >= target:
+            min_len = min(min_len, right - left)
+            result -= nums[left]
+            left += 1
+
+    return min_len if min_len < len(nums) + 1 else 0
             
