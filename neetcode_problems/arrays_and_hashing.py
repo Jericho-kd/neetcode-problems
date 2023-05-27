@@ -178,4 +178,15 @@ def roman_to_int(s: str) -> int:
         result += roman_nums[char]
 
     return result
+
+# 53. Maximum Subarray (medium)
+def max_subarray(nums: list[int]) -> float:
+    max_sum, current_sum = float('-inf'), 0
+
+    for _, el in enumerate(nums):
+        current_sum += el
+        max_sum = max(max_sum, current_sum)
+        current_sum = max(current_sum, 0)
+
+    return max_sum
         

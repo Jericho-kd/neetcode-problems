@@ -58,3 +58,9 @@ def test_roman_to_int():
     assert ah_problems.roman_to_int("III") == 3
     assert ah_problems.roman_to_int("LVIII") == 58
     assert ah_problems.roman_to_int("MCMXCIV") == 1994
+
+
+def test_max_subarray():
+    assert ah_problems.max_subarray([-2,1,-3,4,-1,2,1,-5,4]) == 6
+    assert ah_problems.max_subarray([5,4,-1,7,8]) == 23
+    assert ah_problems.max_subarray([-1, -1, -1, -2]) == -1
