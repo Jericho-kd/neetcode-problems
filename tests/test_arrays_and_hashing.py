@@ -64,3 +64,8 @@ def test_max_subarray():
     assert ah_problems.max_subarray([-2,1,-3,4,-1,2,1,-5,4]) == 6
     assert ah_problems.max_subarray([5,4,-1,7,8]) == 23
     assert ah_problems.max_subarray([-1, -1, -1, -2]) == -1
+
+
+def test_remove_element():
+    assert ah_problems.remove_element([3,2,2,3], 3) == 2
+    assert ah_problems.remove_element([0,1,2,2,3,0,4,2], 2) == 5

@@ -190,3 +190,13 @@ def max_subarray(nums: list[int]) -> float:
 
     return max_sum
         
+# 27. Remove Element (easy)
+def remove_element(nums: list[int], val: int) -> int:
+        result = 0
+
+        for _, el in enumerate(nums):
+            if el != val:
+                nums[result] = el
+                result += 1
+
+        return result
