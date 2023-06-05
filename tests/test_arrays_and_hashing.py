@@ -69,3 +69,8 @@ def test_max_subarray():
 def test_remove_element():
     assert ah_problems.remove_element([3,2,2,3], 3) == 2
     assert ah_problems.remove_element([0,1,2,2,3,0,4,2], 2) == 5
+
+
+def test_longest_consecutive():
+    assert ah_problems.longest_consecutive([100,4,200,1,3,2]) == 4
+    assert ah_problems.longest_consecutive([0,3,7,2,5,8,4,6,0,1]) == 9

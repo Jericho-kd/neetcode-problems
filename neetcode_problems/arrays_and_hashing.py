@@ -179,6 +179,7 @@ def roman_to_int(s: str) -> int:
 
     return result
 
+
 # 53. Maximum Subarray (medium)
 def max_subarray(nums: list[int]) -> float:
     max_sum, current_sum = float('-inf'), 0
@@ -190,6 +191,7 @@ def max_subarray(nums: list[int]) -> float:
 
     return max_sum
         
+
 # 27. Remove Element (easy)
 def remove_element(nums: list[int], val: int) -> int:
         result = 0
@@ -200,3 +202,20 @@ def remove_element(nums: list[int], val: int) -> int:
                 result += 1
 
         return result
+
+
+# 128. Longest Consecutive Sequence (medium)
+def longest_consecutive(nums: list[int]) -> int:
+    result = 0
+    num_set = set(nums)
+
+    for num in nums:
+        if (num - 1) not in num_set:
+            length = 1
+
+            while (num + length) in num_set:
+                length += 1
+            result = max(result, length)
+
+    return result
+
