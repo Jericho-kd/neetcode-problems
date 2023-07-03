@@ -2,6 +2,16 @@ import neetcode_problems.arrays_and_hashing as ah_problems
 import tests
 
 
+# Stub for future tests with only one function
+# arg_types = str | int | list[str] | list[int] | list[list[int]]
+# result_types = bool | str | int | list[int] | list[list[str]] | None
+# func_types = bool | str | list[int] | list[list[str]] | None
+
+
+# def assert_test(*args: arg_types, result: result_types, func: Callable[..., func_types]):
+#     assert func(*args) == result
+
+
 @tests.pytest.mark.parametrize("nums, result", 
                                [([1,2,3,1], True),
                                 ([1,2,3,4], False),
